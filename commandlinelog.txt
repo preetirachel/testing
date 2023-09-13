@@ -1,0 +1,93 @@
+it clone git@github.com:CameronGuthrie/Sky-Repo.git
+cd .gitn\Sky-Repo\
+git branch -v
+
+cd ..
+mkdir sky-local
+cd sky-local
+git init
+git branch
+touch file.txt
+git add file.txt
+git status
+git commit -m "added file.txt to repo"
+git remote add origin git@github.com:CameronGuthrie/sky-remote.git
+git remote -v
+git push -u origin main
+git status
+git add file.txt
+git status
+git commit -m "added some text to file.txt"
+git push
+
+cd ..
+git clone git@github.com:CameronGuthrie/sky-remote.git
+cd .\sky-remote\
+touch test.text
+git add .\test.text
+git commit -m test.text "message"
+cd ..
+
+cd .\sky-local\
+git branch dev
+git branch
+git checkout dev
+git status
+git add file.txt
+git commit -m "updated file.txt"
+git checkout main
+git checkout dev
+touch app.js
+git add app.js
+git branch test
+git switch test
+git switch dev
+git checkout test
+git checkout dev
+git branch -d test
+git branch
+git checkout -b feature-1
+git push -u origin feature-1
+git push --delete origin feature-1
+git switch main
+git branch -d feature-1
+git branch -D feature-1
+
+cd ..
+git clone git@github.com:CameronGuthrie/sky-fork-this-repo.git
+cd .\sky-fork-this-repo\
+git add .\README.md
+git commit -m "updated README"
+git push
+git add .\README.md
+git commit -m "more changes"
+git push
+git remote -v
+git remote
+git remote add cheese git@github.com:CameronGuthrie/sky-fork-this-repo.git
+git remote -v
+git fetch cheese
+git merge cheese/main
+
+git remote -v
+git remote rm cheese
+git remote -v
+git remote add origin git@github.com:CameronGuthrie/sky-fork-this-repo.git
+git remote add cheese https://github.com/CameronGuthrie/sky-fork-this-repo.git
+git remote -v
+git fetch cheese
+git merge cheese/main
+touch file.html
+git add file.html
+git commit -m "added web page"
+git push
+git pull cheese
+git pull cheese main
+git push
+
+git log
+git log --oneline
+git reset --hard a4423ba
+git log --oneline
+git pull cheese main
+git push --force
